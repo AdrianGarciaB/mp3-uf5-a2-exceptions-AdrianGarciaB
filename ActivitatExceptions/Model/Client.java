@@ -1,13 +1,15 @@
-package excepcions.ActivitatExceptions.Model;
+package Model;
 
-import excepcions.ActivitatExceptions.Control.OperacionsBanc;
+
+import Control.OperacionsBanc;
+import Exceptions.BankAccountException;
 
 public class Client {
     private String Nom;
     private String Cognoms;
     private String DNI;
 
-    public Client(String nom, String cognoms, String DNI) {
+    public Client(String nom, String cognoms, String DNI) throws BankAccountException {
         Nom = nom;
         Cognoms = cognoms;
         if(OperacionsBanc.verifyDNI(DNI)) this.DNI = DNI;

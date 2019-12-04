@@ -1,4 +1,4 @@
-package excepcions.ActivitatExceptions.Exceptions;
+package Exceptions;
 
 public class ExceptionMessage {
 

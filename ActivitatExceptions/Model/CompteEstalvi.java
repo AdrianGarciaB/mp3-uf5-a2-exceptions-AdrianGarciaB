@@ -1,4 +1,4 @@
-package excepcions.ActivitatExceptions.Model;
+package Model;
 
 import java.util.List;
 
