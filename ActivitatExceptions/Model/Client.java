@@ -10,7 +10,7 @@ public class Client {
     private String Cognoms;
     private String DNI;
 
-    public Client(String nom, String cognoms, String DNI) throws BankAccountException {
+    public Client(String nom, String cognoms, String DNI) throws ClientAccountException {
         Nom = nom;
         Cognoms = cognoms;
         if(OperacionsBanc.verifyDNI(DNI)) this.DNI = DNI;
