@@ -14,7 +14,7 @@ public class Client {
         Nom = nom;
         Cognoms = cognoms;
         if(OperacionsBanc.verifyDNI(DNI)) this.DNI = DNI;
-        else throw new BankAccountException(ExceptionMessage.WRONG_DNI);
+        else throw new ClientAccountException(ExceptionMessage.WRONG_DNI);
 
     }
 
