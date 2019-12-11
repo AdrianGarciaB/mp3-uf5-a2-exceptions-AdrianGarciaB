@@ -1,5 +1,9 @@
 package Model;
 
+import Exceptions.BankAccountException;
+import Exceptions.ExceptionMessage;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class CompteEstalvi {
@@ -10,6 +14,7 @@ public class CompteEstalvi {
     public CompteEstalvi(String numCompte) {
         this.numCompte = numCompte;
         saldo = 0;
+        this.llista_usuaris = new ArrayList<>();
     }
 
     /**
@@ -29,7 +34,8 @@ public class CompteEstalvi {
      @return quantitat d'usuaris que té el compte
      @throws BankAccountException
      **/
-    public int removeUser(String dni) {
+    public int removeUser(String dni) throws BankAccountException {
+        if ((llista_usuaris.size()-1) <=0) throw new BankAccountException(ExceptionMessage.ACCOUNT_ZERO_USER);
         llista_usuaris.removeIf(u -> dni.equals(u.getDNI()));
         return llista_usuaris.size();
     }
@@ -38,7 +44,8 @@ public class CompteEstalvi {
      * Afegeix m diners al saldo
      * @param m
      */
-    public void ingressar(double m) {
+    public void ingressar(double m) throws BankAccountException {
+        if (m <= 0) throw new BankAccountException(ExceptionMessage.TRANSFER_ERROR);
         saldo += m;
     }
 
@@ -47,7 +54,9 @@ public class CompteEstalvi {
      * @param m
      * @throws BankAccountException
      */
-    public void treure(double m) {
+    public void treure(double m) throws BankAccountException {
+        if (m <= 0) throw new BankAccountException(ExceptionMessage.TRANSFER_ERROR);
+        else if (getSaldo() - m < 0)  throw new BankAccountException(ExceptionMessage.ACCOUNT_OVERDRAFT);
         saldo -= m;
     }
 

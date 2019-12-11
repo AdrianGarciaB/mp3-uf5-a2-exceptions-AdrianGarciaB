@@ -3,6 +3,7 @@ package Model;
 
 import Control.OperacionsBanc;
 import Exceptions.BankAccountException;
+import Exceptions.ExceptionMessage;
 
 public class Client {
     private String Nom;
@@ -13,6 +14,7 @@ public class Client {
         Nom = nom;
         Cognoms = cognoms;
         if(OperacionsBanc.verifyDNI(DNI)) this.DNI = DNI;
+        else throw new BankAccountException(ExceptionMessage.WRONG_DNI);
 
     }
 
