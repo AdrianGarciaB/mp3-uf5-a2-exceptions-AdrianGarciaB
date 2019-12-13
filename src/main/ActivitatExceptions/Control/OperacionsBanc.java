@@ -1,13 +1,14 @@
 package Control;
 
 import Exceptions.BankAccountException;
+import Exceptions.ClientAccountException;
 import Exceptions.ExceptionMessage;
 import Model.CompteEstalvi;
 
 public class OperacionsBanc {
 
 
-    public static boolean verifyDNI(String dni) throws BankAccountException {
+    public static boolean verifyDNI(String dni) {
         String[] asignacionLetra = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
         int nDNI = Integer.parseInt(dni.substring(0, dni.length()-1));
         String letra = dni.substring(dni.length()-1);
@@ -18,6 +19,7 @@ public class OperacionsBanc {
     }
 
     public static void transferencia(CompteEstalvi font, CompteEstalvi desti, double suma) throws BankAccountException {
+        //TODO font y desti la verificacion no es correcta
         if (font == null && desti == null) {
             throw new BankAccountException(ExceptionMessage.ACCOUNT_NOT_FOUND);
         }

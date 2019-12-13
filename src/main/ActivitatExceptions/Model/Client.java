@@ -3,6 +3,7 @@ package Model;
 
 import Control.OperacionsBanc;
 import Exceptions.BankAccountException;
+import Exceptions.ClientAccountException;
 import Exceptions.ExceptionMessage;
 
 public class Client {
@@ -13,8 +14,7 @@ public class Client {
     public Client(String nom, String cognoms, String DNI) throws ClientAccountException {
         Nom = nom;
         Cognoms = cognoms;
-        if(OperacionsBanc.verifyDNI(DNI)) this.DNI = DNI;
-        else throw new ClientAccountException(ExceptionMessage.WRONG_DNI);
+        setDNI(DNI);
 
     }
 
@@ -38,8 +38,9 @@ public class Client {
         return DNI;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    public void setDNI(String DNI) throws ClientAccountException {
+        if(OperacionsBanc.verifyDNI(DNI)) this.DNI = DNI;
+        else throw new ClientAccountException(ExceptionMessage.WRONG_DNI);
     }
 
 
