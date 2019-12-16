@@ -1,7 +1,7 @@
-package Model;
+package ActivitatExceptions.Model;
 
 
-import Control.OperacionsBanc;
+import ActivitatExceptions.Control.OperacionsBanc;
 import Exceptions.BankAccountException;
 import Exceptions.ClientAccountException;
 import Exceptions.ExceptionMessage;

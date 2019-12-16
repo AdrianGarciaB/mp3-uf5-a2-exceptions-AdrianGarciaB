@@ -1,9 +1,9 @@
-import Control.OperacionsBanc;
+import ActivitatExceptions.Control.OperacionsBanc;
 import Exceptions.BankAccountException;
 import Exceptions.ClientAccountException;
 import Exceptions.ExceptionMessage;
-import Model.Client;
-import Model.CompteEstalvi;
+import ActivitatExceptions.Model.Client;
+import ActivitatExceptions.Model.CompteEstalvi;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

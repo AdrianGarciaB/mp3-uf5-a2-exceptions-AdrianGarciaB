@@ -1,4 +1,4 @@
-package Model;
+package ActivitatExceptions.Model;
 
 import Exceptions.BankAccountException;
 import Exceptions.ClientAccountException;

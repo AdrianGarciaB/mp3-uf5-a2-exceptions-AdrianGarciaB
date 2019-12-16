@@ -1,6 +1,9 @@
+package ActivitatExceptions;
+
+import ActivitatExceptions.Model.Client;
+import ActivitatExceptions.Model.CompteEstalvi;
 import Exceptions.ClientAccountException;
-import Model.Client;
-import Model.CompteEstalvi;
+
 
 import java.util.HashSet;
 import java.util.Scanner;

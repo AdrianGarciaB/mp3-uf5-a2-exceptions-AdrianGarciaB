@@ -1,9 +1,9 @@
-package Control;
+package ActivitatExceptions.Control;
 
 import Exceptions.BankAccountException;
 import Exceptions.ClientAccountException;
 import Exceptions.ExceptionMessage;
-import Model.CompteEstalvi;
+import ActivitatExceptions.Model.CompteEstalvi;
 
 public class OperacionsBanc {
 
