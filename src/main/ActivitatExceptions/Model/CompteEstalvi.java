@@ -1,6 +1,7 @@
 package Model;
 
 import Exceptions.BankAccountException;
+import Exceptions.ClientAccountException;
 import Exceptions.ExceptionMessage;
 
 import java.util.ArrayList;
@@ -23,7 +24,13 @@ public class CompteEstalvi {
         @return quantitat d'usuaris que té el compte
 
      **/
-    public int addUser(Client client) {
+    public int addUser(Client client) throws ClientAccountException {
+        for (Client clientaux: llista_usuaris) {
+            if (clientaux.getDNI().equals(client.getDNI())){
+                // DNI Duplicat.
+                throw new ClientAccountException(ExceptionMessage.DUPLICATE_DNI);
+            }
+        }
         llista_usuaris.add(client);
         return llista_usuaris.size();
     }
