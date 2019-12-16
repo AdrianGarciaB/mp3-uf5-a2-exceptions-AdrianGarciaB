@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>mp3-uf5-a2-exceptions-AdrianGarciaB</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <artifactId>MP03UF5A2ExceptionsAdrianGarciaB</artifactId>
+    <version>1.2-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
@@ -26,6 +27,8 @@
         </dependency>
     </dependencies>
     <build>
+        <sourceDirectory>src/main</sourceDirectory>
+        <testSourceDirectory>test</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
